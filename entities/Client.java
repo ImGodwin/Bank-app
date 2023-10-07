@@ -48,15 +48,16 @@ public class Client extends Bank {
         }
     }
 
-    public void askForLoan(int x)
+    public long askForLoan(int x)
     { int request = (20 / this.balance) * 100;
-        if (x > request)
+        if ((20 / x) * 100 > request)
         {
             System.out.println("You have: " + this.balance + " in your account meaning " +
                     "we cannot grant your loan request");
         }else {
-            System.out.println("Your loan request has been accepted");
+            System.out.println("Your loan request has been approved, we will get back to you soon");
         }
+        return request;
     }
 
 

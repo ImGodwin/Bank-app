@@ -11,7 +11,7 @@ public class BankingHall {
         for (int i = 0; i< clients.length; i++)
         {
             clients[i] = new Client("Dayyz", "Lagos", 50000, 200,
-                    1234, 4000, 2000);
+                    1234, 40000, 2000);
         }
 
         Scanner input = new Scanner(System.in);
@@ -38,9 +38,12 @@ public class BankingHall {
                    System.out.println("After withdrawing: " +  num  + "\nyour new balance is: " + clients[1].withdraw(num));
                    break;
                }case ("d"): {
-                   System.out.println("Type in th");
+                   System.out.println("How much do you want for loan?");
+                   int num = Integer.parseInt(input.nextLine());
+                   System.out.println(clients[1].askForLoan(num));
+                   break;
                }case ("e"): {
-
+                   System.out.println("Thanks for banking with us");
                }
            }
         }
