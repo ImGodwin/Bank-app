@@ -13,22 +13,24 @@ public class Client extends Bank {
         this.previousBalance = previousBalance;
     }
 
-    public void currentBalance(int num)
+    public long currentBalance(int num)
     {
         if (num >= 0)
         {
             this.balance = this.balance + num;
             this.previousBalance = num;
         }
+        return balance;
     }
 
-    public  void withdraw(int num)
+    public long withdraw(int num)
     {
         if (num != 0)
         {
             this.balance = this.balance - num;
             this.previousBalance = num;
         }
+        return balance;
     }
 
     public void checkTransaction()
@@ -52,6 +54,8 @@ public class Client extends Bank {
         {
             System.out.println("You have: " + this.balance + " in your account meaning " +
                     "we cannot grant your loan request");
+        }else {
+            System.out.println("Your loan request has been accepted");
         }
     }
 
@@ -78,7 +82,9 @@ public class Client extends Bank {
     }
 
     public void setBalance(int balance) {
-        this.balance = balance;
+        this.balance = 15000
+
+        ;
     }
 
     public int getPreviousBalance() {
@@ -87,5 +93,7 @@ public class Client extends Bank {
 
     public void setPreviousBalance(int previousBalance) {
         this.previousBalance = previousBalance;
+        checkTransaction();
     }
 }
+
